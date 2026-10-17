@@ -17,6 +17,7 @@ import { AuthService } from './core/services/auth.service';
         } @else {
           <a routerLink="/officer/queue">Unassigned Queue</a>
           <a routerLink="/officer/workload">My Workload</a>
+          <a routerLink="/officer/dashboard">Team Dashboard</a>
         }
         <span class="spacer"></span>
         <span class="user-chip">{{ auth.currentUser()?.displayName }} ({{ auth.currentUser()?.role }})</span>

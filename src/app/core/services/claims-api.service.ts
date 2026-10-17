@@ -10,6 +10,7 @@ import {
   RespondToInformationRequest,
   SubmitClaimRequest
 } from '../models/claim.model';
+import { DashboardSummary } from '../models/dashboard.model';
 
 @Injectable({ providedIn: 'root' })
 export class ClaimsApiService {
@@ -56,5 +57,9 @@ export class ClaimsApiService {
 
   decide(id: string, request: DecideClaimRequest): Observable<ClaimDetail> {
     return this.http.post<ClaimDetail>(`${API_BASE_URL}/claims/${id}/decision`, request);
+  }
+
+  getDashboardSummary(): Observable<DashboardSummary> {
+    return this.http.get<DashboardSummary>(`${API_BASE_URL}/dashboard/summary`);
   }
 }

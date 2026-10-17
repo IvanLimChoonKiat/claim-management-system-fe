@@ -39,6 +39,13 @@ export const routes: Routes = [
     data: { role: 'ClaimsOfficer' }
   },
   {
+    path: 'officer/dashboard',
+    loadComponent: () =>
+      import('./features/claims-officer/team-dashboard.component').then((m) => m.TeamDashboardComponent),
+    canActivate: [authGuard],
+    data: { role: 'ClaimsOfficer' }
+  },
+  {
     path: 'officer/claims/:id',
     loadComponent: () => import('./features/claims/claim-detail.component').then((m) => m.ClaimDetailComponent),
     canActivate: [authGuard],
